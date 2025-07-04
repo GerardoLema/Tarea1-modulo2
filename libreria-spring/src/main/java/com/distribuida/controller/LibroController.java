@@ -6,12 +6,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 @RestController
-@RequestMapping("/api/Libros")
+@RequestMapping("/api/libros")
 public class LibroController {
     @Autowired
     private LibroService libroService;
     @GetMapping
-    public ResponseEntity<List<Libro>> fibdAll() {
+    public ResponseEntity<List<Libro>> findAll() {
         return ResponseEntity.ok(libroService.findAll());}
     @GetMapping("/{id}")
     public ResponseEntity<Libro> findOne(@PathVariable int id) {

@@ -51,7 +51,7 @@ public class FacturaDetalleControllerTestIntegracion {
         Libro libro = new Libro(1, "Spring in Action", "Manning", 200, "4th", "Español", new Date(),"Programación distribuida que usa patrones ","Pasta blanda", " 978-1617291208", 20, "Blanco", "Virtual",20.00, categoria, autor);
         FacturaDetalle facturaDetalle = new FacturaDetalle(1, 2,100.00,factura,libro);
         Mockito.when(facturaDetalleService.save(any(FacturaDetalle.class))).thenReturn(facturaDetalle);
-        mockMvc.perform(post("api/facturaDetalles")
+        mockMvc.perform(post("/api/facturaDetalles")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsBytes(facturaDetalle)))
                 .andExpect(status().isOk())

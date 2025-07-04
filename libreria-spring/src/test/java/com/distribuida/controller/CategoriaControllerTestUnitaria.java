@@ -26,7 +26,7 @@ public class CategoriaControllerTestUnitaria {
     @Test
     public void testFindAll(){
         when(categoriaService.findAll()).thenReturn(List.of(categoria));
-        ResponseEntity<List<Categoria>> respuesta = categoriaController.fibdAll();
+        ResponseEntity<List<Categoria>> respuesta = categoriaController.findAll();
         assertEquals(200,respuesta.getStatusCodeValue());
         assertEquals(1,respuesta.getBody().size());
         verify(categoriaService, times(1)).findAll(); }

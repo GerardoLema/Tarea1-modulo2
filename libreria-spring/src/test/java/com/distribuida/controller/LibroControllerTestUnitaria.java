@@ -46,7 +46,7 @@ public class LibroControllerTestUnitaria {
     @Test
     public void testFindAll(){
         when(libroService.findAll()).thenReturn(List.of(libro));
-        ResponseEntity<List<Libro>> respuesta = libroController.fibdAll();
+        ResponseEntity<List<Libro>> respuesta = libroController.findAll();
         assertEquals(200,respuesta.getStatusCodeValue());
         assertEquals(1,respuesta.getBody().size());
         verify(libroService, times(1)).findAll(); }

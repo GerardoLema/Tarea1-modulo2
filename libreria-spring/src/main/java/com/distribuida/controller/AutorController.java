@@ -11,7 +11,7 @@ public class AutorController {
     @Autowired
     private AutorService autorService;
     @GetMapping
-    public ResponseEntity<List<Autor>> fibdAll() {
+    public ResponseEntity<List<Autor>> findAll() {
         return ResponseEntity.ok(autorService.findAll());}
     @GetMapping("/{id}")
     public ResponseEntity<Autor> findOne(@PathVariable int id) {

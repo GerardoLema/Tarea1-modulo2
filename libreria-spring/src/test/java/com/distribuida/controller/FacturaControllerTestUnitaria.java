@@ -32,7 +32,7 @@ public class FacturaControllerTestUnitaria {
     @Test
     public void testFindAll(){
         when(facturaService.findAll()).thenReturn(List.of(factura));
-        ResponseEntity<List<Factura>> respuesta = facturaController.fibdAll();
+        ResponseEntity<List<Factura>> respuesta = facturaController.findAll();
         assertEquals(200,respuesta.getStatusCodeValue());
         assertEquals(1,respuesta.getBody().size());
         verify(facturaService, times(1)).findAll(); }

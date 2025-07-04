@@ -21,7 +21,7 @@ public class Cliente {//atributos
     private String correo;
     // constructor vacio
     public Cliente(){ }// constructor con parametros
-    public Cliente(int idCliente, String cedula, String juan, String taipe, String s, String number, String mail){
+    public Cliente(int idCliente, String cedula, String nombre, String apellido, String direccion, String telefono, String correo){
         this.idCliente =idCliente;
         this.cedula = cedula;
         this.nombre = nombre;

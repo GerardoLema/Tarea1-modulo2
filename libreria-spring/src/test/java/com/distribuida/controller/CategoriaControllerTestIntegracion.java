@@ -27,14 +27,14 @@ public class CategoriaControllerTestIntegracion {
     public void testFindAll() throws Exception {
         Categoria categoria = new Categoria(1,"Fisica", "Fisica Basica Elemental");
         Mockito.when(categoriaService.findAll()).thenReturn(List.of(categoria));
-        mockMvc.perform(get("/api/Categorias"))
+        mockMvc.perform(get("/api/categorias"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].nombre").value("Juan"));}
     @Test
     public void testPostCategoria() throws Exception {
         Categoria categoria = new Categoria(1,"Fisica", "Fisica Basica Elemental");
         Mockito.when(categoriaService.save(any(Categoria.class))).thenReturn(categoria);
-        mockMvc.perform(post("api/categorias")
+        mockMvc.perform(post("/api/categorias")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsBytes(categoria)))
                 .andExpect(status().isOk())

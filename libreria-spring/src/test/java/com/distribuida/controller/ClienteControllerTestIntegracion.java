@@ -34,7 +34,7 @@ public class ClienteControllerTestIntegracion {
     public void testPostCliente() throws Exception {
         Cliente cliente = new Cliente(0, "1701234567", "Juan", "Taipe", "Av. por ahi", "0984567891", "gle23@gmail.com");
         Mockito.when(clienteService.save(any(Cliente.class))).thenReturn(cliente);
-        mockMvc.perform(post("api/clientes")
+        mockMvc.perform(post("/api/clientes")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsBytes(cliente)))
                 .andExpect(status().isOk())

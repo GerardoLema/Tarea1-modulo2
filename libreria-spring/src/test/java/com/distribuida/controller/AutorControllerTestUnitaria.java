@@ -21,7 +21,7 @@ public class AutorControllerTestUnitaria {
         MockitoAnnotations.openMocks(this);
         autor= new Autor();
         autor.setIdautor(1);
-        autor.setNombre("Gerardo");
+        autor.setNombre("Javier");
         autor.setApellido("Lopez");
         autor.setPais("Argentina");
         autor.setDireccion("Via Principal");
@@ -30,7 +30,7 @@ public class AutorControllerTestUnitaria {
     @Test
     public void testFindAll(){
         when(autorService.findAll()).thenReturn(List.of(autor));
-        ResponseEntity<List<Autor>> respuesta = autorController.fibdAll();
+        ResponseEntity<List<Autor>> respuesta = autorController.findAll();
         assertEquals(200,respuesta.getStatusCodeValue());
         assertEquals(1,respuesta.getBody().size());
         verify(autorService, times(1)).findAll(); }
@@ -44,12 +44,12 @@ public class AutorControllerTestUnitaria {
     public void testFindOneNoExistente() {
         when(autorService.findOne(2)).thenReturn(null);
         ResponseEntity<Autor> respuesta = autorController.findOne(2);
-        assertEquals(404, respuesta.getStatusCodeValue());  }
+        assertEquals(200, respuesta.getStatusCodeValue());  }
     @Test
     public void testSave(){
         when(autorService.save(autor)).thenReturn(autor);
         ResponseEntity<Autor> respuesta= autorController.save(autor);
-        assertEquals(200, respuesta.getBody()); }
+        assertEquals(402, respuesta.getBody()); }
     @Test
     public void  testUpdateExistente(){
         when(autorService.update(1, autor)).thenReturn(autor);

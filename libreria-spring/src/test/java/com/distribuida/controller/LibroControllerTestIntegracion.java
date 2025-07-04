@@ -48,7 +48,7 @@ public class LibroControllerTestIntegracion {
         Libro libro = new Libro(1, "Spring in Action", "Manning", 200, "4th", "Español", new Date(),"Programación distribuida que usa patrones ","Pasta blanda", " 978-1617291208", 20, "Blanco", "Virtual",20.00, categoria, autor);
 
         Mockito.when(libroService.save(any(Libro.class))).thenReturn(libro);
-        mockMvc.perform(post("api/libros")
+        mockMvc.perform(post("/api/libros")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsBytes(libro)))
                 .andExpect(status().isOk())

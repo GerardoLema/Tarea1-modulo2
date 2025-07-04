@@ -34,7 +34,7 @@ public class AutorControllerTestIntegracion {
     public void testPostAutor() throws Exception {
         Autor autor = new Autor(1,"Gerardo", "Lopez", "Argentina", "Via principal","0984567891","gle23@gmail.com");
         Mockito.when(autorService.save(any(Autor.class))).thenReturn(autor);
-        mockMvc.perform(post("api/autores")
+        mockMvc.perform(post("/api/autores")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsBytes(autor)))
                 .andExpect(status().isOk())

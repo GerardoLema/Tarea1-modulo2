@@ -32,7 +32,7 @@ public class FacturaControllerTestIntegracion {
         Cliente cliente = new Cliente(1,"1701234567", "Juan", "Taipe", "Av. por ahi","0984567891","gle23@gmail.com");
         Factura factura = new Factura(1,"FAC-0001", new Date(), 100.00, 15.00, 115.00, cliente );
         Mockito.when(facturaService.findAll()).thenReturn(List.of(factura));
-        mockMvc.perform(get("/api/Facturas"))
+        mockMvc.perform(get("/api/facturas"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].numFactura").value("FAC-0001"));}
     @Test
@@ -40,7 +40,7 @@ public class FacturaControllerTestIntegracion {
         Cliente cliente = new Cliente(1,"1701234567", "Juan", "Taipe", "Av. por ahi","0984567891","gle23@gmail.com");
         Factura factura = new Factura(1,"FAC-0001", new Date(), 100.00, 15.00, 115.00, cliente );
         Mockito.when(facturaService.save(any(Factura.class))).thenReturn(factura);
-        mockMvc.perform(post("api/Facturas")
+        mockMvc.perform(post("/api/facturas")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsBytes(factura)))
                 .andExpect(status().isOk())

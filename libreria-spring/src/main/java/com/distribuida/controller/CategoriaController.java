@@ -14,7 +14,7 @@ public class CategoriaController {
     @Autowired
     private CategoriaService categoriaService;
     @GetMapping
-    public ResponseEntity<List<Categoria>> fibdAll() {
+    public ResponseEntity<List<Categoria>> findAll() {
         return ResponseEntity.ok(categoriaService.findAll());}
     @GetMapping("/{id}")
     public ResponseEntity<Categoria> findOne(@PathVariable int id) {

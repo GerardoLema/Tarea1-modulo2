@@ -11,7 +11,7 @@ public class FacturaController {
     @Autowired
     private FacturaService facturaService;
     @GetMapping
-    public ResponseEntity<List<Factura>> fibdAll() {
+    public ResponseEntity<List<Factura>> findAll() {
         return ResponseEntity.ok(facturaService.findAll());}
     @GetMapping("/{id}")
     public ResponseEntity<Factura> findOne(@PathVariable int id) {

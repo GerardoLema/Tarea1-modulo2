@@ -14,10 +14,11 @@ import java.util.List;
 public class LibroRepositoryTestIntegracion {
     @Autowired
     private LibroRepository libroRepository;
+
     @Test
-    public void findAll(){
+    public void findAll() {
         List<Libro> libros = libroRepository.findAll();
-        for(Libro item:libros){
+        for (Libro item : libros) {
             System.out.println(item.toString());
         }
     }
