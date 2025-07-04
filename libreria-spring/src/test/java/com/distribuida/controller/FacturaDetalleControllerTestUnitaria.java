@@ -26,7 +26,7 @@ public class FacturaDetalleControllerTestUnitaria {
         Autor autor = new Autor(1,"Gerardo", "Lopez", "Argentina", "Via principal","0984567891","gle23@gmail.com");
         Categoria categoria = new Categoria(1,"Fisica", "Fisica Basica Elemental");
         Libro libro = new Libro(1, "Spring in Action", "Manning", 200, "4th", "Español", new Date(),"Programación distribuida que usa patrones ","Pasta blanda", " 978-1617291208", 20, "Blanco", "Virtual",20.00, categoria, autor);
-        facturaDetalle = new FacturaDetalle();
+        //facturaDetalle = new FacturaDetalle();
         facturaDetalle.setIdFacturaDetalle(1);
         facturaDetalle.setCantidad(10);
         facturaDetalle.setSubtotal(20);
