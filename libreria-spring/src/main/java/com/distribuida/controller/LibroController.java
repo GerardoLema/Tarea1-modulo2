@@ -27,7 +27,7 @@ public class LibroController {
         Libro libro1 = libroService.update(id, libro);
         if (libro1 == null) {
             return ResponseEntity.notFound().build(); }
-        return ResponseEntity.ok(libro);}
+        return ResponseEntity.ok(libro1);}
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable int id){
         libroService.delete(id);

@@ -12,9 +12,12 @@ public class FacturaDetalle {
     private int cantidad;
     @Column(name = "subtotal")
     private double subtotal;
+    @ManyToOne
+    @JoinColumn(name = "id_factura")
     private Factura factura;
+    @ManyToOne
+    @JoinColumn(name = "id_libro")
     private Libro libro;
-
     public FacturaDetalle(int idFacturaDetalle, int cantidad, double subtotal, Factura factura, Libro libro) {
         this.idFacturaDetalle = idFacturaDetalle;
         this.cantidad = cantidad;
@@ -61,4 +64,16 @@ public class FacturaDetalle {
 
     public void setLibro(Libro libro) {
         this.libro = libro;
-    }}
+    }
+    @Override
+    public String toString() {
+        return "FacturaDetalle{" +
+                "idFacturaDetalle=" + idFacturaDetalle+
+                ", catidad='" + cantidad +
+                ", subtotal='" + subtotal +
+                ", factura=" + factura +
+                ", libro=" + libro + '}';
+    }
+
+}
+

@@ -31,6 +31,7 @@ ngOnInit(): void {
 
 findAll(): void {
   this.clienteService.findAll().subscribe(data => {
+    console.log("libro",data);
     //this.clientes = data
     this.dataSource = new MatTableDataSource(data);
     this.dataSource.paginator = this.paginator;

@@ -47,14 +47,14 @@ public class ClienteRepositoryTestIntegracion {
         assertTrue(cliente.isPresent());
         cliente.orElse(null).setCedula("0548768419");
         cliente.orElse(null).setNombre("Gerardo");
-        cliente.orElse(null).setApellido("Acurio");
+        cliente.orElse(null).setApellido("Acuario");
         cliente.orElse(null).setDireccion("Cotopaxi");
         cliente.orElse(null).setTelefono("225788");
         cliente.orElse(null).setCorreo("acurio@gmail.com");
         Cliente clienteActualizado = clienteRepository.save(cliente.orElse(null));
         assertNotNull(clienteActualizado);
         assertEquals("Gerardo",clienteActualizado.getNombre());
-        assertEquals("Acurio",clienteActualizado.getApellido());
+        assertEquals("Acuario",clienteActualizado.getApellido());
     }
     @Test
     public void delete(){

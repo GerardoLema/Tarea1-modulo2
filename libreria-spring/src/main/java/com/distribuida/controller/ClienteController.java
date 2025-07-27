@@ -29,7 +29,7 @@ public class ClienteController {
         Cliente cliente1 = clienteService.update(id,cliente);
         if(cliente1 ==null){
             return ResponseEntity.notFound().build(); }
-        return  ResponseEntity.ok(cliente);}
+        return  ResponseEntity.ok(cliente1);}
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable int id) {
         clienteService.delete(id);

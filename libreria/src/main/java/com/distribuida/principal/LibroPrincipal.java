@@ -1,8 +1,8 @@
 package com.distribuida.principal;
 
-import com.distribuida.entities.Autor;
-import com.distribuida.entities.Categoria;
-import com.distribuida.entities.Libro;
+import com.distribuida.model.Autor;
+import com.distribuida.model.Categoria;
+import com.distribuida.model.Libro;
 import java.util.Date;
 public class LibroPrincipal {
     public static void main(String[] args){

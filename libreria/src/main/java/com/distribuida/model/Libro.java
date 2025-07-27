@@ -1,4 +1,4 @@
-package com.distribuida.entities;
+package com.distribuida.model;
 import java.util.Date;
 public class Libro {
     private int idlibro;

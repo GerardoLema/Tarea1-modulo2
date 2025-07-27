@@ -1,4 +1,4 @@
-import com.distribuida.entities.Autor;
+import com.distribuida.model.Autor;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

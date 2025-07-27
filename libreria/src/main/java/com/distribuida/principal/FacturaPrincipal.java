@@ -1,6 +1,6 @@
 package com.distribuida.principal;
-import com.distribuida.entities.Cliente;
-import com.distribuida.entities.Factura;
+import com.distribuida.model.Cliente;
+import com.distribuida.model.Factura;
 import  java.util.Date;
 public class FacturaPrincipal {
     public static void main(String[] args){

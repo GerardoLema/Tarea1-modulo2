@@ -27,7 +27,7 @@ public class FacturaController {
         Factura factura1 = facturaService.update(id, factura);
         if (factura1 == null) {
             return ResponseEntity.notFound().build(); }
-        return ResponseEntity.ok(factura);}
+        return ResponseEntity.ok(factura1);}
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable int id){
         facturaService.delete(id);

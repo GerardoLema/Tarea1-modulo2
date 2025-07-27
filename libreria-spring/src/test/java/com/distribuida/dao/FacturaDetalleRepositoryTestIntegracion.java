@@ -16,8 +16,8 @@ public class FacturaDetalleRepositoryTestIntegracion {
     private FacturaDetalleRepository facturadetalleRepository;
     @Test
     public void findAll(){
-        List<FacturaDetalle> facturadetalles = facturadetalleRepository.findAll();
-        for(FacturaDetalle item:facturadetalles){
+        List<FacturaDetalle> facturaDetalles = facturadetalleRepository.findAll();
+        for(FacturaDetalle item:facturaDetalles){
             System.out.println(item.toString());
         }
     }

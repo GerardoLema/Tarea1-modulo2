@@ -30,7 +30,7 @@ public class CategoriaController {
         Categoria categoria1 = categoriaService.update(id, categoria);
         if (categoria1 == null) {
             return ResponseEntity.notFound().build(); }
-        return ResponseEntity.ok(categoria);}
+        return ResponseEntity.ok(categoria1);}
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable int id){
         categoriaService.delete(id);

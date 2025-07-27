@@ -1,11 +1,9 @@
 package com.distribuida.controller;
 import com.distribuida.model.Autor;
 import com.distribuida.model.Categoria;
-import com.distribuida.model.Cliente;
 import com.distribuida.model.Libro;
 import com.distribuida.service.AutorService;
 import com.distribuida.service.CategoriaService;
-import com.distribuida.service.ClienteService;
 import com.distribuida.service.LibroService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;

@@ -27,7 +27,7 @@ public class AutorController {
         Autor autor1 = autorService.update(id, Autor);
         if (autor1 == null) {
             return ResponseEntity.notFound().build(); }
-        return ResponseEntity.ok(Autor);}
+        return ResponseEntity.ok(autor1);}
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable int id){
         autorService.delete(id);

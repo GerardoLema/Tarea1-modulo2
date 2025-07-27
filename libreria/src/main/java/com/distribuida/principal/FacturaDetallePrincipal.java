@@ -1,7 +1,7 @@
 package com.distribuida.principal;
-import com.distribuida.entities.Factura;
-import com.distribuida.entities.FacturaDetalle;
-import com.distribuida.entities.Libro;
+import com.distribuida.model.Factura;
+import com.distribuida.model.FacturaDetalle;
+import com.distribuida.model.Libro;
 public class FacturaDetallePrincipal {
     public static void main(String[] args){
         FacturaDetalle facturadetalle=new FacturaDetalle();

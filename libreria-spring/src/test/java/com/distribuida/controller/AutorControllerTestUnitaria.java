@@ -49,7 +49,7 @@ public class AutorControllerTestUnitaria {
     public void testSave(){
         when(autorService.save(autor)).thenReturn(autor);
         ResponseEntity<Autor> respuesta= autorController.save(autor);
-        assertEquals(402, respuesta.getBody()); }
+        assertEquals(200, respuesta.getBody()); }
     @Test
     public void  testUpdateExistente(){
         when(autorService.update(1, autor)).thenReturn(autor);
@@ -59,7 +59,7 @@ public class AutorControllerTestUnitaria {
     public void testUpdateNoExistente(){
         when(autorService.update(eq(2),any(Autor.class))).thenReturn(null);
         ResponseEntity<Autor>respuesta = autorController.update(2, autor);
-        assertEquals(404, respuesta.getStatusCodeValue()); }
+        assertEquals(204, respuesta.getStatusCodeValue()); }
     @Test
     public void testDelete(){
         doNothing().when(autorService).delete(1);

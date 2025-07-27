@@ -1,4 +1,4 @@
-package com.distribuida.entities;
+package com.distribuida.model;
 public class FacturaDetalle {
     private int idfacturadetalle;
     private int cantidad;
