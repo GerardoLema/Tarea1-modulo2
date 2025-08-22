@@ -20,7 +20,7 @@ public class AutorControllerTestUnitaria {
     public  void setup(){
         MockitoAnnotations.openMocks(this);
         autor= new Autor();
-        autor.setIdautor(1);
+        autor.setIdAutor(1);
         autor.setNombre("Javier");
         autor.setApellido("Lopez");
         autor.setPais("Argentina");

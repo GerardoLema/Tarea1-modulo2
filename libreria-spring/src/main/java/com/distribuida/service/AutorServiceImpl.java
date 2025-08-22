@@ -28,6 +28,7 @@ public class AutorServiceImpl implements AutorService {
     @Override
     public Autor update(int id, Autor autor) {
         Autor autorExistente =findOne(id);
+
         if(autorExistente == null){
             return null;
         }

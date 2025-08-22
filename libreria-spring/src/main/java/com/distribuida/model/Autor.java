@@ -1,13 +1,14 @@
 package com.distribuida.model;
+
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="autor")
+@Table(name= "autor")
 public class Autor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_autor")
-    private  int idautor;
+    private int idAutor;
     @Column(name = "nombre")
     private String nombre;
     @Column(name = "apellido")
@@ -15,17 +16,17 @@ public class Autor {
     @Column(name = "pais")
     private String pais;
     @Column(name = "direccion")
-    private  String direccion;
+    private String direccion;
     @Column(name = "telefono")
-    private  String telefono;
+    private String telefono;
     @Column(name = "correo")
-    private  String correo;
+    private String correo;
 
     public Autor() {
     }
 
-    public Autor(int idautor, String nombre, String apellido, String pais, String direccion, String telefono, String correo) {
-        this.idautor = idautor;
+    public Autor(int idAutor, String nombre, String apellido, String pais, String direccion, String telefono, String correo) {
+        this.idAutor = idAutor;
         this.nombre = nombre;
         this.apellido = apellido;
         this.pais = pais;
@@ -34,12 +35,12 @@ public class Autor {
         this.correo = correo;
     }
 
-    public int getIdautor() {
-        return idautor;
+    public int getIdAutor() {
+        return idAutor;
     }
 
-    public void setIdautor(int idautor) {
-        this.idautor = idautor;
+    public void setIdAutor(int idAutor) {
+        this.idAutor = idAutor;
     }
 
     public String getNombre() {
@@ -93,7 +94,7 @@ public class Autor {
     @Override
     public String toString() {
         return "Autor{" +
-                "idautor=" + idautor +
+                "idAutor=" + idAutor +
                 ", nombre='" + nombre + '\'' +
                 ", apellido='" + apellido + '\'' +
                 ", pais='" + pais + '\'' +

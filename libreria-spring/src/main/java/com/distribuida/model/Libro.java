@@ -12,22 +12,22 @@ public class Libro {
     private String titulo;
     @Column(name = "editorial")
     private String editorial;
-    @Column(name = "numpaginas")
-    private int numpaginas;
+    @Column(name = "num_paginas")
+    private int numPaginas;
     @Column(name = "edicion")
     private String edicion;
     @Column(name = "idioma")
     private String idioma;
-    @Column(name = "fechapublicacion")
-    private Date fechapublicacion;
+    @Column(name = "fecha_publicacion")
+    private Date fechaPublicacion;
     @Column(name = "descripcion")
     private String descripcion;
-    @Column(name = "tipopasta")
-    private String tipopasta;
+    @Column(name = "tipo_pasta")
+    private String tipoPasta;
     @Column(name = "iSBN")
-    private  String iSBN;
-    @Column(name = "numejemplares")
-    private int numejemplares;
+    private String iSBN;
+    @Column(name = "num_ejemplares")
+    private int numEjemplares;
     @Column(name = "portada")
     private String portada;
     @Column(name = "presentacion")
@@ -36,24 +36,28 @@ public class Libro {
     private Double precio;
 
     //inyecion  de dependencia
+    @ManyToOne
+    @JoinColumn(name ="id_categoria")
     private Categoria categoria;
-    private  Autor autor;
+    @ManyToOne
+    @JoinColumn(name ="id_autor")
+    private Autor autor;
 
     public Libro() {
     }
 
-    public Libro(int idlibro, String titulo, String editorial, int numpaginas, String edicion, String idioma, Date fechapublicacion, String descripcion, String tipopasta, String iSBN, int numejemplares, String portada, String presentacion, Double precio, Categoria categoria, Autor autor) {
+    public Libro(int idlibro, String titulo, String editorial, int numPaginas, String edicion, String idioma, Date fechaPublicacion, String descripcion, String tipoPasta, String iSBN, int numEjemplares, String portada, String presentacion, Double precio, Categoria categoria, Autor autor) {
         this.idlibro = idlibro;
         this.titulo = titulo;
         this.editorial = editorial;
-        this.numpaginas = numpaginas;
+        this.numPaginas = numPaginas;
         this.edicion = edicion;
         this.idioma = idioma;
-        this.fechapublicacion = fechapublicacion;
+        this.fechaPublicacion = fechaPublicacion;
         this.descripcion = descripcion;
-        this.tipopasta = tipopasta;
+        this.tipoPasta = tipoPasta;
         this.iSBN = iSBN;
-        this.numejemplares = numejemplares;
+        this.numEjemplares = numEjemplares;
         this.portada = portada;
         this.presentacion = presentacion;
         this.precio = precio;
@@ -85,12 +89,12 @@ public class Libro {
         this.editorial = editorial;
     }
 
-    public int getNumpaginas() {
-        return numpaginas;
+    public int getNumPaginas() {
+        return numPaginas;
     }
 
-    public void setNumpaginas(int numpaginas) {
-        this.numpaginas = numpaginas;
+    public void setNumPaginas(int numPaginas) {
+        this.numPaginas = numPaginas;
     }
 
     public String getEdicion() {
@@ -109,12 +113,12 @@ public class Libro {
         this.idioma = idioma;
     }
 
-    public Date getFechapublicacion() {
-        return fechapublicacion;
+    public Date getFechaPublicacion() {
+        return fechaPublicacion;
     }
 
-    public void setFechapublicacion(Date fechapublicacion) {
-        this.fechapublicacion = fechapublicacion;
+    public void setFechaPublicacion(Date fechaPublicacion) {
+        this.fechaPublicacion = fechaPublicacion;
     }
 
     public String getDescripcion() {
@@ -125,12 +129,12 @@ public class Libro {
         this.descripcion = descripcion;
     }
 
-    public String getTipopasta() {
-        return tipopasta;
+    public String getTipoPasta() {
+        return tipoPasta;
     }
 
-    public void setTipopasta(String tipopasta) {
-        this.tipopasta = tipopasta;
+    public void setTipoPasta(String tipoPasta) {
+        this.tipoPasta = tipoPasta;
     }
 
     public String getiSBN() {
@@ -141,12 +145,12 @@ public class Libro {
         this.iSBN = iSBN;
     }
 
-    public int getNumejemplares() {
-        return numejemplares;
+    public int getNumEjemplares() {
+        return numEjemplares;
     }
 
-    public void setNumejemplares(int numejemplares) {
-        this.numejemplares = numejemplares;
+    public void setNumEjemplares(int numEjemplares) {
+        this.numEjemplares = numEjemplares;
     }
 
     public String getPortada() {
@@ -195,14 +199,14 @@ public class Libro {
                 "idlibro=" + idlibro +
                 ", titulo='" + titulo + '\'' +
                 ", editorial='" + editorial + '\'' +
-                ", numpaginas=" + numpaginas +
+                ", numPaginas=" + numPaginas +
                 ", edicion='" + edicion + '\'' +
                 ", idioma='" + idioma + '\'' +
-                ", fechapublicacion=" + fechapublicacion +
+                ", fechaPublicacion=" + fechaPublicacion +
                 ", descripcion='" + descripcion + '\'' +
-                ", tipopasta='" + tipopasta + '\'' +
+                ", tipoPasta='" + tipoPasta + '\'' +
                 ", iSBN='" + iSBN + '\'' +
-                ", numejemplares=" + numejemplares +
+                ", numEjemplares=" + numEjemplares +
                 ", portada='" + portada + '\'' +
                 ", presentacion='" + presentacion + '\'' +
                 ", precio=" + precio +

@@ -26,14 +26,14 @@ public class LibroServiceImpl implements  LibroService {
 
         libroExistente.setTitulo(libro.getTitulo());
         libroExistente.setEditorial(libro.getEditorial());
-        libroExistente.setNumpaginas(libro.getNumpaginas());
+        libroExistente.setNumPaginas(libro.getNumPaginas());
         libroExistente.setEdicion(libro.getEdicion());
         libroExistente.setIdioma(libro.getIdioma());
-        libroExistente.setFechapublicacion(libro.getFechapublicacion());
+        libroExistente.setFechaPublicacion(libro.getFechaPublicacion());
         libroExistente.setDescripcion(libro.getDescripcion());
-        libroExistente.setTipopasta(libro.getTipopasta());
+        libroExistente.setTipoPasta(libro.getTipoPasta());
         libroExistente.setiSBN(libro.getiSBN());
-        libroExistente.setNumejemplares(libro.getNumejemplares());
+        libroExistente.setNumEjemplares(libro.getNumEjemplares());
         libroExistente.setPortada(libro.getPortada());
         libroExistente.setPresentacion(libro.getPresentacion());
         libroExistente.setPrecio(libro.getPrecio());

@@ -30,14 +30,14 @@ public class LibroControllerTestUnitaria {
         libro.setIdlibro(1);
         libro.setTitulo("Spring in Action");
         libro.setEditorial("Manning");
-        libro.setNumpaginas(200);
+        libro.setNumPaginas(200);
         libro.setEdicion("4th");
         libro.setIdioma("Español");
-        libro.setFechapublicacion(new Date());
+        libro.setFechaPublicacion(new Date());
         libro.setDescripcion("Programación distribuida que usa patrones ");
-        libro.setTipopasta("Pasta blanda");
+        libro.setTipoPasta("Pasta blanda");
         libro.setiSBN(" 978-1617291208");
-        libro.setNumejemplares(20);
+        libro.setNumEjemplares(20);
         libro.setPortada("Blanco");
         libro.setPresentacion("Virtual");
         libro.setPrecio(20.00);
