@@ -31,7 +31,8 @@ export class LibroComponent implements OnInit {
   imagenPreview: string = "";
   libroSeleccionado: Libro | null = null;
 
-  mostrarColumnas: string[] = ['detalles', 'idLibro', 'titulo', 'editorial', 'edicion', 'idioma', 'fechaPublicacion', 'numEjemplares', 'precio', 'autor', 'categoria', 'acciones'];
+  mostrarColumnas: string[] = ['detalles', 'idLibro', 'titulo', 'editorial', 
+  'edicion', 'idioma', 'fechaPublicacion', 'numEjemplares', 'precio', 'autor', 'categoria', 'acciones'];
   @ViewChild('formularioLibro') formularioLibro!: ElementRef;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;

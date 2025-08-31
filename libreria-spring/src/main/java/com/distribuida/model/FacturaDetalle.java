@@ -16,7 +16,7 @@ public class FacturaDetalle {
     @ManyToOne
     @JoinColumn(name = "id_libro")
     private Libro libro;
-    public FacturaDetalle(int idFacturaDetalle, int cantidad, double subtotal, Factura factura, Libro libro) {
+    public FacturaDetalle() {
         this.idFacturaDetalle = idFacturaDetalle;
         this.cantidad = cantidad;
         this.subtotal = subtotal;

@@ -10,13 +10,13 @@ import java.util.ArrayList;
 import java.util.List;
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity
-@Table(name = "id_carrito")
+@Table(name = "id-carrito")
 public class Carrito {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_carrito")
     private Long idCarrito;
-    @ManyToOne(optional = false)
+    @ManyToOne(optional = true,fetch = FetchType.LAZY)
     @JoinColumn(name = "id_cliente")
     private Cliente cliente;
     @Column(name = "token",unique = true)
@@ -32,7 +32,7 @@ public class Carrito {
     private BigDecimal impuestos = BigDecimal.ZERO;
     @Column(name = "total", precision = 12, scale = 2)
     private BigDecimal total = BigDecimal.ZERO;
-    @Column(name = "actualizado_en")
+    @Column(name = "actualizado_en", nullable = false, updatable = false)
     private LocalDateTime actualizadoEn;
     public void recomputarTotales(BigDecimal tasaIva) {
         subtotal = items.stream()
