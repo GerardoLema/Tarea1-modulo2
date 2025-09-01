@@ -11,12 +11,13 @@ public class CarritoGuestController {
     public CarritoGuestController(CarritoService carritoService) {
         this.carritoService = carritoService;
     }
+    /**
+     * Handles POST requests to the base path. This method either creates a new
+     * guest cart or retrieves an existing one based on the provided token.
+     * The redundant 'Get' method has been removed to resolve the ambiguous mapping error.
+     */
     @PostMapping
     public ResponseEntity<Carrito> createOrGet(@RequestParam String token) {
-        return ResponseEntity.ok(carritoService.getOrCreateByToken(token));
-    }
-    @PostMapping
-    public ResponseEntity<Carrito> Get(@RequestParam String token) {
         return ResponseEntity.ok(carritoService.getOrCreateByToken(token));
     }
     @GetMapping

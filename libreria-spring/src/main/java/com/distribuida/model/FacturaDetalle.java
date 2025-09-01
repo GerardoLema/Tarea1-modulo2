@@ -1,29 +1,35 @@
 package com.distribuida.model;
+
 import jakarta.persistence.*;
 
 @Entity
 @Table(name="factura_detalle")
 public class FacturaDetalle {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_factura-detalle")
+    @Column(name = "id_factura_detalle")
     private int idFacturaDetalle;
+
+    @Column(name = "cantidad")
     private int cantidad;
+
+    @Column(name = "subtotal")
     private double subtotal;
+
     @ManyToOne
     @JoinColumn(name = "id_factura")
     private Factura factura;
+
     @ManyToOne
     @JoinColumn(name = "id_libro")
     private Libro libro;
+
     public FacturaDetalle() {
-        this.idFacturaDetalle = idFacturaDetalle;
-        this.cantidad = cantidad;
-        this.subtotal = subtotal;
-        this.factura = factura;
-        this.libro = libro;
+        // Constructor vacío requerido por JPA
     }
 
+    // Getters y Setters
     public int getIdFacturaDetalle() {
         return idFacturaDetalle;
     }
@@ -63,15 +69,15 @@ public class FacturaDetalle {
     public void setLibro(Libro libro) {
         this.libro = libro;
     }
+
     @Override
     public String toString() {
         return "FacturaDetalle{" +
-                "idFacturaDetalle=" + idFacturaDetalle+
-                ", catidad='" + cantidad +
-                ", subtotal='" + subtotal +
+                "idFacturaDetalle=" + idFacturaDetalle +
+                ", cantidad=" + cantidad +
+                ", subtotal=" + subtotal +
                 ", factura=" + factura +
-                ", libro=" + libro + '}';
+                ", libro=" + libro +
+                '}';
     }
-
 }
-

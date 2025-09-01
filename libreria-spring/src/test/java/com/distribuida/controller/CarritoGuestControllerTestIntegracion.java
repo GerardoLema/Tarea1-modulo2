@@ -14,13 +14,17 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
 import java.util.Map;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
 @DisplayName("Pruebas de Integración para CarritoGuestController")
-class CarritoGuestControllerIT {
+class CarritoGuestControllerTestIntegracion
+{
     @Autowired
     private MockMvc mockMvc;
     @Autowired
@@ -41,9 +45,16 @@ class CarritoGuestControllerIT {
         libroRepository.deleteAll();
         // Crear un libro en la base de datos de prueba
         testLibro = new Libro();
-        testLibro.setIdlibro(1);
         testLibro.setTitulo("El arte de la guerra");
         testLibro.setPrecio(15.00);
+        testLibro.setiSBN("0985647897");
+        testLibro.setNumEjemplares(10);
+        testLibro.setDescripcion("Una descripción de prueba");
+        testLibro.setEditorial("Editorial de prueba");
+        testLibro.setNumPaginas(250);
+        // Conversión de LocalDate a Date utilizando ZonedDateTime para evitar el error de tipos incompatibles
+        LocalDate localDate = LocalDate.of(2023, 1, 1);
+        testLibro.setFechaPublicacion(Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant()));
         libroRepository.save(testLibro);
     }
 
@@ -75,7 +86,7 @@ class CarritoGuestControllerIT {
                         .content(jsonContent))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.items.length()").value(1))
-                .andExpect(jsonPath("$.subtotal").value(31.00));
+                .andExpect(jsonPath("$.subtotal").value(30.00));
 
         // Verificación adicional: el ítem fue persistido en la base de datos
         var carrito = carritoService.getByToken(TEST_TOKEN);
@@ -98,7 +109,7 @@ class CarritoGuestControllerIT {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(jsonContent))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.subtotal").value(46.50)); // 15.50 * 3
+                .andExpect(jsonPath("$.subtotal").value(45.00)); // 15.00 * 3
 
         // Verificación adicional: el cambio se refleja en la base de datos
         var updatedItem = carritoItemRepository.findById(carritoItemId).orElseThrow();
